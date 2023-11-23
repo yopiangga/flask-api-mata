@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-	return 'Hello Team Mata Netra | Auto Deploy follow Branch Master'
+	return 'Hello Team Mata Netra | Auto Deploy follow Branch Master 2'
 
 # main driver function
 if __name__ == '__main__':
