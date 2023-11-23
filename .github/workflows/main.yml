@@ -18,4 +18,5 @@ jobs:
           script: |
             cd /var/www/flask-api-mata
             git pull
+            source ./bin/activate
             flask run --host=0.0.0.0
