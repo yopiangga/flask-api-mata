@@ -16,8 +16,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: 22
           script: |
-            flask_pid=$(ps aux | grep flask | awk '{print $2}')
-            kill -9 $flask_pid
+
             cd /var/www/flask-api-mata
             git pull
             source ./bin/activate
