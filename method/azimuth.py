@@ -2,10 +2,10 @@ import math
 
 def calculate_azimuth(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
-    lat1 = math.radians(lat1)
-    lon1 = math.radians(lon1)
-    lat2 = math.radians(lat2)
-    lon2 = math.radians(lon2)
+    lat1 = math.radians(float(lat1))
+    lon1 = math.radians(float(lon1))
+    lat2 = math.radians(float(lat2))
+    lon2 = math.radians(float(lon2))
 
     # Calculate the differences in longitude and latitude
     delta_lon = lon2 - lon1
