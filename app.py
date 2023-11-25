@@ -1,10 +1,13 @@
-from flask import Flask, request, Response
+
+from flask import Flask, request, Response, jsonify
 import cv2
 import numpy as np
 import networkx as nx
 import json
-
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Algoritma Dijkstra dan graf Anda
 graph = {
@@ -111,4 +114,5 @@ def shortest_path():
     return json.dumps(shortest_path)
 
 if __name__ == '__main__':
-    app.run(host='103.127.97.215:5000', debug=True)
+	# app.run()
+	app.run(debug=True, host='0.0.0.0', port=5000)

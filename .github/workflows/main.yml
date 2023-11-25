@@ -1,0 +1,23 @@
+name: Build Default
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: 22
+          script: |
+
+            cd /var/www/flask-api-mata
+            git pull
+            source ./bin/activate
+            flask run --host=0.0.0.0
