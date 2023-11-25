@@ -1,0 +1,128 @@
+{
+    "data": [
+        {   "id": "G1",
+            "deskripsi": "Gerbang Masuk D4",
+            "lat": -7.2763525703615741,
+            "long": 112.79461309396176
+        },
+        {   "id": "C101",
+            "deskripsi": "Ruang Kepala Lab & Pengajar",
+            "lat": -7.2763660566185537,
+            "long": 112.79487301931
+        },
+        {
+            "id": "C102",
+            "deskripsi": "Ruang Lab Data Centric and Business system",
+            "lat": -7.2766466735276039,
+            "long": 112.79483726684502
+        },
+        {
+            "id": "C102P",
+            "deskripsi": "Ruang Proyek Akhir mahasiswa informatika",
+            "lat": -7.2767234318190361,
+            "long": 112.79482795651427
+        },
+        {
+            "id": "C103",
+            "deskripsi": "Ruang Proyek Akhir",
+            "lat": -7.2767055215191183,
+            "long": 112.79493990170261
+        },
+        {
+            "id": "C104",
+            "deskripsi": "Ruang Kepala Lab & Pengajar",
+            "lat": -7.2767663097348843,
+            "long": 112.79485391417816
+        },
+        {
+            "id": "C105",
+            "deskripsi": "Runang Health Information",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "C105P",
+            "deskripsi": "Ruang Proyek Akhir",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "TE",
+            "deskripsi": "Ruang Penyimpanan, Toilet Pria & Wanita",
+            "lat": -7.276760242593161,
+            "long": 112.79493787493114
+        },
+        {
+            "id": "E105",
+            "deskripsi": "Ruang Proyek Akhir",
+            "lat": -7.2767549481318126,
+            "long": 112.79494096801872
+        },
+        {
+            "id": "E106",
+            "deskripsi": "Ruang Kepala Lab & Pengajar",
+            "lat": -7.2767615984438772,
+            "long": 112.79501230282516
+        },
+        {
+            "id": "E107",
+            "deskripsi": "Ruang Lab Telephony",
+            "lat": -7.2767580921443411,
+            "long": 112.79513849170613
+        },
+        {
+            "id": "E108",
+            "deskripsi": "Lab Komunikasi Digital",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "CED",
+            "deskripsi": "Check Point Pojok",
+            "lat": -7.2768043139576433,
+            "long": 112.79519069955451
+        },
+        {
+            "id": "D104",
+            "deskripsi": "Ruang Lab Kontrol Cerdas & Robotika",
+            "lat": -7.2767610660862427,
+            "long": 112.79512878275966
+        },
+        {
+            "id": "D103",
+            "deskripsi": "Ruang Lab Pengemudian Elektrik",
+            "lat": -7.276706989201255,
+            "long": 112.79504785309919
+        },
+        {
+            "id": "D102",
+            "deskripsi": "Ruang Kepala Lab & Pengajar",
+            "lat": -7.2767580921443411,
+            "long": 112.79513849170613
+        },
+        {
+            "id": "A101",
+            "deskripsi": "Ruang Administrasi Umum",
+            "lat": -7.2764036239304692,
+            "long": 112.79491583312195
+        },
+        {
+            "id": "G2",
+            "deskripsi": "Gerbang Hall D4",
+            "lat": -7.2763832171293537,
+            "long": 112.79494426421991
+        },
+        {
+            "id": "A102",
+            "deskripsi": "Ruang Administrasi Akademik",
+            "lat": -7.2765936185120585,
+            "long": 112.79491583312195
+        },
+        {
+            "id": "TAC",
+            "deskripsi": "Tangga D4 Dekat Gerbang Masuk D4",
+            "lat": -7.2763551466682346,
+            "long": 112.79483487798822
+        }
+    ]
+}
