@@ -1,4 +1,4 @@
-
+import base64
 from flask import Flask, request, Response, jsonify
 import cv2
 import numpy as np
@@ -8,10 +8,9 @@ from flask_cors import CORS, cross_origin
 
 import method.distance as distance
 import method.azimuth as azimuth
+import method.image_classifiation as image_classifiation
 
 app = Flask(__name__)
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 @cross_origin()
@@ -38,6 +37,21 @@ def get_azimuth():
     source = data['source']
     target = data['target']
     return jsonify({'azimuth': azimuth.calculate_azimuth(source['lat'], source['lng'], target['lat'], target['lng'])})
+
+@app.route('/image-classification', methods=['POST'])  
+@cross_origin()
+def classify_image():
+    imagefile = request.files['image']
+    img = imagefile.read()
+    img_base64 = base64.b64encode(img).decode('utf-8')
+
+    # predictions, probabilities = prediction.classifyImage(img)
+
+    result = {
+        'base64': img_base64,
+        'predictions': "predictions"
+    }
+    return jsonify(result)
 
 if __name__ == '__main__':
 	app.run(debug=False, host='0.0.0.0', port=5000)
