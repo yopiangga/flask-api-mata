@@ -1,6 +1,5 @@
 import base64
 from flask import Flask, request, Response, jsonify
-import cv2
 import numpy as np
 import networkx as nx
 import json

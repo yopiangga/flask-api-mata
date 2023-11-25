@@ -26,7 +26,8 @@ graph = {
     'SAC': {'A102': 1, 'G1': 1},
 }
 
-dir_data = "C:/Users/dismo/OneDrive/Documents/Alfian Prisma Yopiangga/Bangkit/Capstone/code/flask-api-mata/dataset/data-d4-l1-v2.csv"
+# dir_data = "C:/Users/dismo/OneDrive/Documents/Alfian Prisma Yopiangga/Bangkit/Capstone/code/flask-api-mata/dataset/data-d4-l1-v2.csv"
+dir_data = "/var/www/flask-api-mata/dataset/data-d4-l1-v2.csv"
 
 with open(dir_data, 'r') as file:
     data = json.load(file)

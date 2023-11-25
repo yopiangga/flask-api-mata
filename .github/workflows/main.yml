@@ -19,5 +19,4 @@ jobs:
             cd /var/www/flask-api-mata
             git pull
             source ./bin/activate
-            pip install opencv-python flask, flask_cors, numpy, networkx
             flask run --host=0.0.0.0
