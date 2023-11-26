@@ -16,7 +16,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: 22
           script: |
-
             cd /var/www/flask-api-mata
             git pull
             source ./bin/activate
