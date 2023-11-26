@@ -94,18 +94,22 @@ def get_azimuth():
     target = data['target']
     return jsonify({'azimuth': azimuth.calculate_azimuth(source['lat'], source['lng'], target['lat'], target['lng'])})
 
+# Load the saved model
+model = load_model('model.h5')
+
 @app.route('/image-classification', methods=['POST'])  
 @cross_origin()
 def classify_image():
     imagefile = request.files['image']
-    img = imagefile.read()
-    img_base64 = base64.b64encode(img).decode('utf-8')
+    img = Image.open(io.BytesIO(imagefile.read())).resize((32, 32))
+    img_array = np.expand_dims(img_to_array(img), axis=0) / 255.0
 
-    # predictions, probabilities = prediction.classifyImage(img)
+    predictions = model.predict(img_array)
+    predicted_class = np.argmax(predictions)
 
     result = {
-        'base64': img_base64,
-        'predictions': "predictions"
+        'base64': base64.b64encode(img_array).decode('utf-8'),
+        'predictions': str(predicted_class)
     }
     return jsonify(result)
 
