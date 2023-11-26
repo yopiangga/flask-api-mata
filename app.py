@@ -69,6 +69,49 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 # main driver function
+def get_home():
+    return jsonify({'message': 'Welcome to Mata API'})
+
+@app.route('/get-routes', methods=['GET'])
+@cross_origin()
+def get_routes():
+    return jsonify({'routes': distance.data})
+
+@app.route('/shortest_path', methods=['POST'])
+@cross_origin()
+def shortest_path():
+    data = request.get_json()
+    source = data['source']
+    target = data['target']
+    return distance.get_distance(source, target)
+
+@app.route('/azimuth', methods=['POST'])
+@cross_origin()
+def get_azimuth():
+    data = request.get_json()
+    source = data['source']
+    target = data['target']
+    return jsonify({'azimuth': azimuth.calculate_azimuth(source['lat'], source['lng'], target['lat'], target['lng'])})
+
+# Load the saved model
+model = load_model('model.h5')
+
+@app.route('/image-classification', methods=['POST'])  
+@cross_origin()
+def classify_image():
+    imagefile = request.files['image']
+    img = Image.open(io.BytesIO(imagefile.read())).resize((32, 32))
+    img_array = np.expand_dims(img_to_array(img), axis=0) / 255.0
+
+    predictions = model.predict(img_array)
+    predicted_class = np.argmax(predictions)
+
+    result = {
+        'base64': base64.b64encode(img_array).decode('utf-8'),
+        'predictions': str(predicted_class)
+    }
+    return jsonify(result)
+
 if __name__ == '__main__':
 	# app.run()
 	app.run(debug=True, host='0.0.0.0', port=5000)
