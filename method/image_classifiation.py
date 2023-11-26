@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
 # Step 2: Load the CSV file using pandas
-df = pd.read_csv('data-d4-l1-v2')
+df = pd.read_csv('./dataset/data-tabel-d4-l1')
 
 # Step 3: Preprocess the dataset if necessary
 # This step depends on your dataset. You might need to normalize numerical data, 
