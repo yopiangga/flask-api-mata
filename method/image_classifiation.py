@@ -1,35 +1,59 @@
-# Step 1: Import necessary libraries
-import pandas as pd
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from sklearn.model_selection import train_test_split
+
 import tensorflow as tf
+import keras
+import cv2
+import numpy as np
+import base64
+from PIL import Image
+import io
+from keras.preprocessing import image
+from keras.applications import imagenet_utils
+from keras.applications import MobileNet
+from keras.applications.mobilenet import preprocess_input
+from keras.models import load_model
 
-# Step 2: Load the CSV file using pandas
-df = pd.read_csv('data-d4-l1-v2 ')
+# Load the pre-trained model
+model = load_model('model.h5')
+model._make_predict_function()
+print('Model loaded. Start serving...')
 
-# Step 3: Preprocess the dataset if necessary
-# This step depends on your dataset. You might need to normalize numerical data, 
-# encode categorical data, handle missing values, etc.
+# Load the pre-trained model
+model = load_model('model.h5')
+model._make_predict_function()
+print('Model loaded. Check http://localhost:5000/')
 
-# Step 4: Split the dataset into features (X) and target (y)
-X = df.drop('target_column', axis=1)
-y = df['target_column']
+# Initialize the Flask API
+app = Flask(__name__)
+# Route to predict
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Get the image from post request
+    img = base64_to_pil(request.json)
+    # Save the image to ./uploads
+    img.save("./uploads/image.png")
+    # Make prediction
+    preds = model_predict("./uploads/image.png", model)
+    # Process your result for human
+    pred_class = decode_predictions(preds, top=1)
+    result = str(pred_class[0][0][1])
+    # Serialize the result, you can add additional fields
+    return jsonify(result)
 
-# Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+def base64_to_pil(string):
+    imgdata = base64.b64decode(string)
+    return Image.open(io.BytesIO(imgdata))
 
-# Step 5: Define the model architecture
-model = Sequential([
-    Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
-    Dense(1, activation='sigmoid')
-])
+def model_predict(img_path, model):
+    img = image.load_img(img_path, target_size=(224, 224))
+    # Preprocessing the image
+    x = image.img_to_array(img)
+    # x = np.true_divide(x, 255)
+    x = np.expand_dims(x, axis=0)
+    # Be careful how your trained model deals with the input
+    # otherwise, it won't make correct prediction!
+    x = preprocess_input(x, mode='caffe')
+    preds = model.predict(x)
+    return preds
+if __name__ == '__main__':
 
-# Step 6: Compile the model
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-# Step 7: Train the model with the dataset
-model.fit(X_train, y_train, epochs=10, batch_size=32)
-
-# Step 8: Save the model in .h5 format
-model.save('model.h5')
+    app.run(debug=True)
