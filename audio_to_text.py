@@ -17,7 +17,8 @@ def base64_to_text(base64_string):
 
     try:
         # Use Google Web Speech API for speech-to-text
-        text = recognizer.recognize_google(audio_data)
+        text = recognizer.recognize_google(audio_data, language="en-US")
+        # text_en = recognizer.recognize_google(audio_data, language="en-US")
         return text
     except sr.UnknownValueError:
         return "Failed to translate audio"
