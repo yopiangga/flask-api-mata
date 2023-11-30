@@ -1,0 +1,149 @@
+{
+    "data": [
+        {   "id": "G1",
+            "title": "Entry Gate",
+            "deskripsi": "Gate Entrance to Engineering Building D4",
+            "lat": -7.2763525703615741,
+            "long": 112.79461309396176
+        },
+        {   "id": "C101",
+            "title": "Head of Lab & Teacher's Room",
+            "deskripsi": "Lab Head Room and Lecturers for the D4 Informatics Engineering Study Program with a lab focus on software development",
+            "lat": -7.2763660566185537,
+            "long": 112.79487301931
+        },
+        {
+            "id": "C102",
+            "title": "Data Centric and Business system Lab Room",
+            "deskripsi": "data centric and business systems lab space with a lab focus on business systems development,",
+            "lat": -7.2766466735276039,
+            "long": 112.79483726684502
+        },
+        {
+            "id": "C102P",
+            "title": "Final Project Room for informatics students",
+            "deskripsi": "space for informatics engineering students to work on final projects",
+            "lat": -7.2767234318190361,
+            "long": 112.79482795651427
+        },
+        {
+            "id": "C103",
+            "title": "Final Project Room",
+            "deskripsi": "space for informatics engineering students to work on final projects",
+            "lat": -7.2767055215191183,
+            "long": 112.79493990170261
+        },
+        {
+            "id": "C104",
+            "title": "Head of Lab & Teacher's Room",
+            "deskripsi": "Lab Head Room and Lecturers for the D4 Informatics Engineering Study Program with a lab focus on databaser",
+            "lat": -7.2767663097348843,
+            "long": 112.79485391417816
+        },
+        {
+            "id": "C105",
+            "title": "Health Information Room",
+            "deskripsi": "Health information room with a focus on D4 student health",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "C105P",
+            "title": "Final Project Room",
+            "deskripsi": "space for telecommunications engineering students to work on their final project",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "TE",
+            "title": "Storage Room, Men's & Women's Toilets",
+            "deskripsi": "storage warehouse and toilets for students or lecturers",
+            "lat": -7.276760242593161,
+            "long": 112.79493787493114
+        },
+        {
+            "id": "E105",
+            "title": "Final Project Room",
+            "deskripsi": "space for telecommunications engineering students to work on their final project",
+            "lat": -7.2767549481318126,
+            "long": 112.79494096801872
+        },
+        {
+            "id": "E106",
+            "title": "Head of Lab & Teacher's Room",
+            "deskripsi": "Lab Head Room and Lecturers for the D4 Itelecommunications engineering",
+            "lat": -7.2767615984438772,
+            "long": 112.79501230282516
+        },
+        {
+            "id": "E107",
+            "title": "Telephony Lab Room",
+            "deskripsi": "D4 telecommunications engineering student lab",
+            "lat": -7.2767580921443411,
+            "long": 112.79513849170613
+        },
+        {
+            "id": "E108",
+            "title": "Digital Communication Lab",
+            "deskripsi": "D4 Telecommunication Engineering Digital Communication Lab with Lab Focus on Digital Communication",
+            "lat": -7.2767588816077931,
+            "long": 112.79487884299202
+        },
+        {
+            "id": "CED",
+            "title": "Check Point Corner",
+            "deskripsi": "Check Point Corner where the road crosses before determining the direction.",
+            "lat": -7.2768043139576433,
+            "long": 112.79519069955451
+        },
+        {
+            "id": "D104",
+            "title": "Intelligent Control and Robotics Lab Room",
+            "deskripsi": "Intelligent Control and Robotics Lab Space With a Lab Focus on Robotics Development",
+            "lat": -7.2767610660862427,
+            "long": 112.79512878275966
+        },
+        {
+            "id": "D103",
+            "title": "Electric Driving Lab Room",
+            "deskripsi": "Electric Driving Lab Room With a Lab focus on Learning Electric Driving",
+            "lat": -7.276706989201255,
+            "long": 112.79504785309919
+        },
+        {
+            "id": "D102",
+            "title": "Head of Lab & Teacher's Room",
+            "deskripsi": "Lab Head Room and Lecturers for the D4 Electronic Engineering Study Program With a lab Focus on Electronic",
+            "lat": -7.2767580921443411,
+            "long": 112.79513849170613
+        },
+        {
+            "id": "A101",
+            "title": "General Administration Room",
+            "deskripsi": "General Administration Room with a focus on D4 student administration processes",
+            "lat": -7.2764036239304692,
+            "long": 112.79491583312195
+        },
+        {
+            "id": "G2",
+            "title": "Gate Hall D4",
+            "deskripsi": "middle door of hall D4",
+            "lat": -7.2763832171293537,
+            "long": 112.79494426421991
+        },
+        {
+            "id": "A102",
+            "title": "Academic Administration Room",
+            "deskripsi": "academic administration room for D4 students",
+            "lat": -7.2765936185120585,
+            "long": 112.79491583312195
+        },
+        {
+            "id": "TAC",
+            "title": "D4 Stairs Near D4 Entrance Gate",
+            "deskripsi": "stairs to the 2nd floor of building D4",
+            "lat": -7.2763551466682346,
+            "long": 112.79483487798822
+        }
+    ]
+}

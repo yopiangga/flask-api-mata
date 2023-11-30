@@ -1,6 +1,6 @@
 import networkx as nx
-# import pandas as pd
 import json
+import config.app as config
 
 graph = {
     'G1': {'C101': 1, 'SAC': 1},
@@ -26,8 +26,7 @@ graph = {
     'SAC': {'A102': 1, 'G1': 1},
 }
 
-# dir_data = "C:/Users/dismo/OneDrive/Documents/Alfian Prisma Yopiangga/Bangkit/Capstone/code/flask-api-mata/dataset/data-d4-l1-v2.csv"
-dir_data = "/var/www/flask-api-mata/dataset/data-d4-l1-v2.csv"
+dir_data = config.path + "dataset/data-d4-l1-v4.csv"
 
 with open(dir_data, 'r') as file:
     data = json.load(file)
