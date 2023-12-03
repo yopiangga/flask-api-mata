@@ -71,26 +71,6 @@ def speech_to_destination():
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
-@app.route('/image-classification', methods=['POST'])  
-# @cross_origin()
-def classify_image():
-    imagefile = request.files['image']
-    img = imagefile.read()
-    img_base64 = base64.b64encode(img).decode('utf-8')
-
-    # predictions, probabilities = prediction.classifyImage(img)
-    # Load and preprocess the image
-    processed_image = image_classifiation.process_image(img)
-
-    # Use the model to classify the image
-    predictions = image_classifiation.model.predict(processed_image)
-
-    result = {
-        'base64': img_base64,
-        'predictions': "predictions"
-    }
-    return jsonify(result)
-
 @app.route('/text-to-destination', methods=['POST'])
 # @cross_origin()
 def text_to_destination():
