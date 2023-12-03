@@ -80,10 +80,10 @@ def classify_image():
 
     # predictions, probabilities = prediction.classifyImage(img)
     # Load and preprocess the image
-    processed_image = process_image(img)
+    processed_image = image_classifiation.process_image(img)
 
     # Use the model to classify the image
-    predictions = model.predict(processed_image)
+    predictions = image_classifiation.model.predict(processed_image)
 
     result = {
         'base64': img_base64,
