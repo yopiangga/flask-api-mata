@@ -9,7 +9,7 @@ with open(dir_data, 'r') as file:
     data = json.load(file)
 data = data['data']
 
-def speech_to_route(speech):
+def text_to_destination(text):
     ids = []
     titles = []
     descriptions = []
@@ -19,9 +19,9 @@ def speech_to_route(speech):
         titles.append(d['title'].lower())
         descriptions.append(d['deskripsi'].lower())
 
-    ids.append(speech.lower())
-    titles.append(speech.lower())
-    descriptions.append(speech.lower())
+    ids.append(text.lower())
+    titles.append(text.lower())
+    descriptions.append(text.lower())
 
     vectorizer = CountVectorizer()
     # vectorizer = ""

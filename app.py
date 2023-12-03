@@ -21,7 +21,7 @@ def hello_world():
 def get_routes():
     return jsonify({'routes': distance.data})
 
-@app.route('/shortest_path', methods=['POST'])
+@app.route('/shortest-path', methods=['POST'])
 # @cross_origin()
 def shortest_path():
     data = request.get_json()
@@ -35,11 +35,11 @@ def get_azimuth():
     data = request.get_json()
     source = data['source']
     target = data['target']
-    return jsonify({'azimuth': azimuth.calculate_azimuth(source['lat'], source['lng'], target['lat'], target['lng'])})
+    return jsonify({'azimuth': azimuth.calculate_azimuth(source['lat'], source['long'], target['lat'], target['long'])})
 
-@app.route('/audio-to-text', methods=['POST'])
+@app.route('/speech-to-destination', methods=['POST'])
 @cross_origin()
-def audio_to_text():
+def speech_to_destination():
     try:
         if 'audio' not in request.files:
             return jsonify({'status': 'error', 'message': 'No file part'}), 400
@@ -64,7 +64,9 @@ def audio_to_text():
         if result == "Cannot requst Google API":
             return jsonify({'status': 'error', 'message': 'Cannot requst Google API'}), 500
 
-        return jsonify({'status': 'succes', 'message': result}), 200
+        destination = similarity.text_to_destination(result)
+
+        return jsonify({'status': 'succes', 'destination': destination}), 200
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
@@ -84,14 +86,14 @@ def classify_image():
     }
     return jsonify(result)
 
-@app.route('/speech-to-route', methods=['POST'])
+@app.route('/text-to-destination', methods=['POST'])
 # @cross_origin()
-def speech_to_route():
+def text_to_destination():
     data = request.get_json()
-    speech = data['speech']
+    text = data['text']
 
-    temp = similarity.speech_to_route(speech)
-    return jsonify({'status': 'succes', 'route': temp}), 200
+    destination = similarity.text_to_destination(text)
+    return jsonify({'status': 'succes', 'destination': destination}), 200
 
 if __name__ == '__main__':
 	# app.run()
