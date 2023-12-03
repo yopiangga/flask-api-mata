@@ -5,7 +5,6 @@ import base64
 import method.audio_to_text as at
 import method.distance as distance
 import method.azimuth as azimuth
-import method.image_classifiation as image_classifiation
 import method.similarity as similarity
 import config.app as config
 
