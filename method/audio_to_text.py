@@ -1,15 +1,16 @@
 import base64
 import speech_recognition as sr
+import config.app as config
 
 def base64_to_text(base64_string):
     binary_audio_data = base64.b64decode(base64_string)
 
-    with open("temp/audio.wav", "wb") as audio_file:
+    with open(config.path + "temp/audio.wav", "wb") as audio_file:
         audio_file.write(binary_audio_data)
 
     recognizer = sr.Recognizer()
 
-    with sr.AudioFile("temp/audio.wav") as source:
+    with sr.AudioFile(config.path + "temp/audio.wav") as source:
         audio_data = recognizer.record(source)
 
     try:
